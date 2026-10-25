@@ -1,4 +1,4 @@
-﻿import { useState, type CSSProperties, type ReactNode } from "react";
+import { useState, type CSSProperties, type ReactNode } from "react";
 
 const ASSET_PATH = "/assets";
 

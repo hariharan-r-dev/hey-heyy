@@ -1,4 +1,4 @@
-﻿import {
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -6,9 +6,9 @@
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { getAppUrl } from "@/utils/app-url";
 
 const assetPathPrefix = "/assets";
-const APP_URL = (import.meta as any).env?.VITE_APP_URL || "http://localhost:5180";
 
 type FeaturedItem = {
   eyebrow: string;
@@ -35,119 +35,126 @@ type MenuDefinition = {
   tools: readonly ToolItem[];
 };
 
-const menus: readonly MenuDefinition[] = [
-  {
-    label: "Product",
-    featuredLabel: "Featured Models",
-    toolsLabel: "Live Demos & Tools",
-    featured: [
-      {
-        eyebrow: "Platform",
-        title: "Product Overview",
-        description: "Explore Zuntra’s four connected identity products.",
-        href: "#page=product-overview",
-        tone: "bg-[#eaf6ff]",
-      },
-      {
-        eyebrow: "Corporate B2B",
-        title: "Digital Business Cards",
-        description: "Experience the live executive smart card with instant vCard save.",
-        href: `${APP_URL}/card/praneeth-sivala`,
-        tone: "bg-[#ffb8e7]",
-        isExternal: true,
-      },
-      {
-        eyebrow: "Event Passes",
-        title: "Summit Pass & Check-In",
-        description: "Preview live attendee registration and door scanner.",
-        href: `${APP_URL}/event/apex-2026`,
-        tone: "bg-[#f0fdb3]",
-        isExternal: true,
-      },
-    ],
-    tools: [
-      ["Showcase Card", "Preview live ultra-luxury architectural listing.", `${APP_URL}/card/villa-bellagio`, "eac73.svg", true],
-      ["Creator 3D Card", "Preview live 3D artist spatial portfolio.", `${APP_URL}/card/julian-reed`, "b9f6f.svg", true],
-      ["Staff Check-In Scanner", "Test mobile door check-in camera scanner.", `${APP_URL}/checkin/apex-2026`, "b6887.svg", true],
-      ["Two-Way Lead CRM", "Automatically capture inbound contact details.", `${APP_URL}/admin`, "eac73.svg", true],
-      ["Email & Meeting Assets", "Generate matching virtual backgrounds and signatures.", `${APP_URL}/admin`, "b9f6f.svg", true],
-      ["Scan & View Telemetry", "Audit views, scans, and vCard saves in real time.", `${APP_URL}/admin`, "b6887.svg", true],
-    ],
-  },
-  {
-    label: "Solutions",
-    featuredLabel: "Start here",
-    toolsLabel: "Built for",
-    featured: [
-      {
-        eyebrow: "Discover",
-        title: "Solutions Overview",
-        description: "Find the right workflow for people, teams, and events.",
-        href: "#page=solutions-overview",
-        tone: "bg-[#eaf6ff]",
-      },
-      {
-        eyebrow: "Personal",
-        title: "For Individuals",
-        description: "Make every introduction easy to remember and save.",
-        href: "#page=for-individuals",
-        tone: "bg-[#ffb8e7]",
-      },
-      {
-        eyebrow: "Collaborate",
-        title: "For Teams",
-        description: "Manage brand, people, cards, leads, and insights.",
-        href: `${APP_URL}/signup`,
-        tone: "bg-[#f0fdb3]",
-        isExternal: true,
-      },
-    ],
-    tools: [
-      ["For Enterprise", "Govern departments, roles, brands, and identities.", `${APP_URL}/signup`, "b9f6f.svg", true],
-      ["For Sales Teams", "Capture and organize leads from every client meeting.", `${APP_URL}/signup`, "eac73.svg", true],
-      ["For Event Organizers", "Manage registration, private passes, and door rosters.", `${APP_URL}/signup`, "b6887.svg", true],
-      ["Admin Workspace Console", "Centralize user cards, billing, and permissions.", `${APP_URL}/admin`, "b6887.svg", true],
-    ],
-  },
-  {
-    label: "Resources",
-    featuredLabel: "Learn",
-    toolsLabel: "Support",
-    featured: [
-      {
-        eyebrow: "Explore",
-        title: "Frequently Asked Questions",
-        description: "Everything about NFC cards, privacy, and CRM sync.",
-        href: "#page=faq",
-        tone: "bg-[#eaf6ff]",
-      },
-      {
-        eyebrow: "Guides",
-        title: "How It Works",
-        description: "From setup to your first scan in under 3 minutes.",
-        href: "#page=how-it-works",
-        tone: "bg-[#eaf6ff]",
-      },
-      {
-        eyebrow: "Plans",
-        title: "Pricing & Tiers",
-        description: "Transparent pricing for individuals, teams, and summits.",
-        href: "#page=pricing-plans",
-        tone: "bg-[#eaf6ff]",
-      },
-    ],
-    tools: [
-      ["Sign In to Dashboard", "Access your active workspaces and cards.", `${APP_URL}/login`, "b6887.svg", true],
-      ["Create Free Account", "Start building your digital business card now.", `${APP_URL}/signup`, "b9f6f.svg", true],
-    ],
-  },
-];
-
 export default function NavigationMenu4({
   onNavigate,
 }: {
   onNavigate?: () => void;
 }) {
+  const menus: readonly MenuDefinition[] = [
+    {
+      label: "Product",
+      featuredLabel: "Featured Models",
+      toolsLabel: "Products & Tools",
+      featured: [
+        {
+          eyebrow: "Platform",
+          title: "Product Overview",
+          description: "Explore Zuntra’s four connected identity products.",
+          href: "/product",
+          tone: "bg-[#eaf6ff]",
+        },
+        {
+          eyebrow: "Corporate B2B",
+          title: "Digital Business Cards",
+          description: "Experience the live executive smart card with instant vCard save.",
+          href: "/digital-business-cards",
+          tone: "bg-[#ffb8e7]",
+        },
+        {
+          eyebrow: "Live Pass Demo",
+          title: "Summit Pass & Check-In",
+          description: "Preview live attendee registration and door scanner.",
+          href: getAppUrl("/event/apex-2026"),
+          tone: "bg-[#f0fdb3]",
+          isExternal: true,
+        },
+      ],
+      tools: [
+        ["Live B2B Card Demo", "Preview live executive smart card.", getAppUrl("/card/praneeth-sivala"), "b6887.svg", true],
+        ["Showcase Card", "Preview live ultra-luxury architectural listing.", getAppUrl("/card/villa-bellagio"), "eac73.svg", true],
+        ["Creator 3D Card", "Preview live 3D artist spatial portfolio.", getAppUrl("/card/julian-reed"), "b9f6f.svg", true],
+        ["Staff Check-In Scanner", "Test mobile door check-in camera scanner.", getAppUrl("/checkin/apex-2026"), "b6887.svg", true],
+        ["QR Business Cards", "Dynamic codes with custom branding and logos.", "/qr-business-cards", "eac73.svg", false],
+        ["NFC Smart Cards", "Tap to share with physical cards and keyfobs.", "/nfc-business-cards", "b9f6f.svg", false],
+        ["Email & Meeting Assets", "Generate matching virtual backgrounds and signatures.", "/email-signatures", "eac73.svg", false],
+        ["Two-Way Lead CRM", "Automatically capture inbound contact details.", "/lead-capture", "b9f6f.svg", false],
+        ["Scan & View Telemetry", "Audit views, scans, and vCard saves in real time.", "/analytics", "b6887.svg", false],
+      ],
+    },
+    {
+      label: "Solutions",
+      featuredLabel: "Start here",
+      toolsLabel: "Built for",
+      featured: [
+        {
+          eyebrow: "Discover",
+          title: "Solutions Overview",
+          description: "Find the right workflow for people, teams, and events.",
+          href: "/solutions",
+          tone: "bg-[#eaf6ff]",
+        },
+        {
+          eyebrow: "Personal",
+          title: "For Individuals",
+          description: "Make every introduction easy to remember and save.",
+          href: "/individuals",
+          tone: "bg-[#ffb8e7]",
+        },
+        {
+          eyebrow: "Collaborate",
+          title: "For Teams",
+          description: "Manage brand, people, cards, leads, and insights.",
+          href: "/teams",
+          tone: "bg-[#f0fdb3]",
+        },
+      ],
+      tools: [
+        ["For Enterprise", "Govern departments, roles, brands, and identities.", "/enterprise", "b9f6f.svg", false],
+        ["For Sales Teams", "Capture and organize leads from every client meeting.", "/sales-teams", "eac73.svg", false],
+        ["For Freelancers", "Professional presence for independent specialists.", "/freelancers", "b6887.svg", false],
+        ["For Small Business", "Fast setup for local teams and practices.", "/small-business", "eac73.svg", false],
+        ["Recruiters & Networking", "Accelerate candidate and partnership connections.", "/recruiters-and-networking", "b9f6f.svg", false],
+        ["Admin Workspace Console", "Centralize user cards, billing, and permissions.", getAppUrl("/admin"), "b6887.svg", true],
+      ],
+    },
+    {
+      label: "Resources",
+      featuredLabel: "Learn",
+      toolsLabel: "Support & Company",
+      featured: [
+        {
+          eyebrow: "Explore",
+          title: "Frequently Asked Questions",
+          description: "Everything about NFC cards, privacy, and CRM sync.",
+          href: "/faq",
+          tone: "bg-[#eaf6ff]",
+        },
+        {
+          eyebrow: "Guides",
+          title: "How It Works",
+          description: "From setup to your first scan in under 3 minutes.",
+          href: "/how-it-works",
+          tone: "bg-[#eaf6ff]",
+        },
+        {
+          eyebrow: "Plans",
+          title: "Pricing & Tiers",
+          description: "Transparent pricing for individuals, teams, and summits.",
+          href: "/pricing",
+          tone: "bg-[#eaf6ff]",
+        },
+      ],
+      tools: [
+        ["Blog & Articles", "Read tactical playbooks and product release notes.", "/blog", "eac73.svg", false],
+        ["About Zuntra", "Our company mission, values, and story.", "/about", "b6887.svg", false],
+        ["Contact Support", "Reach our customer engineering team anytime.", "/contact", "b9f6f.svg", false],
+        ["Book a Demo", "Personalized walkthrough with an identity specialist.", "/book-a-demo", "eac73.svg", false],
+        ["Sign In to Dashboard", "Access your active workspaces and cards.", getAppUrl("/login"), "b6887.svg", true],
+        ["Create Free Account", "Start building your digital business card now.", getAppUrl("/signup"), "b9f6f.svg", true],
+      ],
+    },
+  ];
+
   return (
     <NavigationMenu className="product-navigation">
       <NavigationMenuList className="flex items-center gap-1">
@@ -156,7 +163,7 @@ export default function NavigationMenu4({
             <NavigationMenuTrigger className="product-trigger">
               {menu.label}
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="p-4 sm:p-6 md:w-[720px] lg:w-[820px] bg-white rounded-3xl shadow-2xl border border-[#e5e7eb]">
+            <NavigationMenuContent className="p-4 sm:p-6 md:w-[720px] lg:w-[840px] bg-white rounded-3xl shadow-2xl border border-[#e5e7eb]">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <div className="md:col-span-5 space-y-3">
                   <span className="text-[11px] font-mono uppercase tracking-widest text-[#8e8e93] font-bold">
@@ -231,7 +238,7 @@ export default function NavigationMenu4({
         <NavigationMenuItem>
           <NavigationMenuLink
             className="header-menu-link"
-            href="#how"
+            href="/how-it-works"
             onClick={onNavigate}
           >
             How It Works
@@ -241,7 +248,7 @@ export default function NavigationMenu4({
         <NavigationMenuItem>
           <NavigationMenuLink
             className="header-menu-link"
-            href="#pricing"
+            href="/pricing"
             onClick={onNavigate}
           >
             Pricing
