@@ -378,7 +378,6 @@ export const ContactPage: React.FC = () => {
                       }}
                     >
                       <span>{reason.cta}</span>
-                      <span>→</span>
                     </a>
                   </div>
                 </div>

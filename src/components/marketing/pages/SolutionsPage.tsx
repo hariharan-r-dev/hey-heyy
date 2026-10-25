@@ -182,7 +182,7 @@ export const SolutionsPage: React.FC = () => {
                   </div>
 
                   <span className="text-xs font-bold text-brand-blue group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-2">
-                    Explore role details →
+                    Explore role details
                   </span>
                 </a>
               ))}
@@ -221,7 +221,7 @@ export const SolutionsPage: React.FC = () => {
                 </ul>
                 <div className="pt-2">
                   <a href={startUrl} className="inline-flex items-center gap-2 text-xs font-bold text-brand-blue hover:underline">
-                    Create personal card free →
+                    Create personal card free
                   </a>
                 </div>
               </div>
@@ -247,7 +247,7 @@ export const SolutionsPage: React.FC = () => {
                 </ul>
                 <div className="pt-2">
                   <a href="/contact-us" className="inline-flex items-center gap-2 text-xs font-bold text-brand-blue hover:underline">
-                    Book enterprise team demo →
+                    Book enterprise team demo
                   </a>
                 </div>
               </div>

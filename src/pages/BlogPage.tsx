@@ -444,7 +444,7 @@ export const BlogPage: React.FC = () => {
                     <span style={{ fontSize: "11px", color: "#67675e" }}>{post.role}</span>
                   </div>
                   <span style={{ fontSize: "13px", fontWeight: 700, color: post.accent, display: "flex", alignItems: "center", gap: "4px" }}>
-                    Read article →
+                    Read article
                   </span>
                 </div>
               </div>

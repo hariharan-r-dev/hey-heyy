@@ -22,6 +22,8 @@ export interface TopicPageConfig {
   slug: string;
   category: "Products" | "Solutions" | "Platform" | "Resources" | "Company";
   badge: string;
+  badgeColor?: string;
+  badgeLayerColor?: string;
   title: string;
   headline: string;
   subheadline: string;
@@ -297,7 +299,11 @@ export const TopicPageLayout: React.FC<TopicPageConfig> = (props) => {
               </div>
 
               {/* Stacked Badge */}
-              <StackedBadge color={tone.color} layerColor={tone.layer} className="mb-4">
+              <StackedBadge
+                color={props.badgeColor || tone.color}
+                layerColor={props.badgeLayerColor || tone.layer}
+                className="mb-4"
+              >
                 {props.badge || `${props.category} Model`}
               </StackedBadge>
 
@@ -348,7 +354,6 @@ export const TopicPageLayout: React.FC<TopicPageConfig> = (props) => {
                   }}
                 >
                   <span>{actions.secondaryLabel}</span>
-                  <span aria-hidden="true">→</span>
                 </a>
               </div>
 

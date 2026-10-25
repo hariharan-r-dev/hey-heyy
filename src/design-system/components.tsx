@@ -93,14 +93,9 @@ type StackedBadgeProps = {
   className?: string;
 };
 
-export function StackedBadge({ children, color, layerColor, className = "" }: StackedBadgeProps) {
-  const layerStyle = { backgroundColor: layerColor };
-
+export function StackedBadge({ children, color, className = "" }: StackedBadgeProps) {
   return (
     <div className={["tag-stack", className].filter(Boolean).join(" ")}>
-      <i className="tag-layer" style={layerStyle} />
-      <i className="tag-layer" style={layerStyle} />
-      <i className="tag-layer" style={layerStyle} />
       <span className="tag" style={{ backgroundColor: color }}>{children}</span>
     </div>
   );
@@ -150,7 +145,6 @@ export function ProductCard({ item, index }: { item: ProductCardData; index: num
               }}
             >
               <span>{item.demoLabel || "Preview Live Demo"}</span>
-              <span aria-hidden="true">→</span>
             </a>
           )}
         </div>

@@ -493,7 +493,7 @@ export const PricingPage: React.FC = () => {
                     fontWeight: 700,
                   }}
                 >
-                  {plan.buttonText} →
+                  {plan.buttonText}
                 </a>
               </div>
             ))}

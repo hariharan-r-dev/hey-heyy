@@ -13,7 +13,9 @@ export const NfcBusinessCardsPage: React.FC = () => {
       {...{
         slug: 'nfc-business-cards',
     category: 'Products',
-    badge: 'HARDWARE TAP-TO-SHARE',
+    badge: 'NFC Tap',
+    badgeColor: '#fd4ec2',
+    badgeLayerColor: '#ffbee8',
     title: 'NFC Smart Business Cards',
     headline: 'Tap against any modern phone to share your card in milliseconds.',
     subheadline: 'Write your permanent Zuntra link to any standard NFC smart card, metal card, ring, or sticker. No special apps required for the tap to work.',

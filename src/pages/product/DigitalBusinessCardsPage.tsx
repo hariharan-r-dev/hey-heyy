@@ -345,7 +345,7 @@ export function DigitalBusinessCardsPage() {
 
               {/* Stacked Badge */}
               <StackedBadge color="#395afa" layerColor="#bedffe" className="mb-4">
-                Business 3.0 Identity
+                Digital Business Cards
               </StackedBadge>
 
               <h1

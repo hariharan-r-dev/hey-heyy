@@ -290,7 +290,6 @@ export const AboutPage: React.FC = () => {
                 }}
               >
                 <span>Talk to Our Team</span>
-                <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>

@@ -39,7 +39,7 @@ const steps: StepItem[] = [
 
 const cards: ProductCardData[] = [
   {
-    label: "Business 3.0",
+    label: "Digital Business Cards",
     surface: "#eaf6ff",
     accent: "#395afa",
     accentSoft: "#bedffe",
@@ -51,40 +51,40 @@ const cards: ProductCardData[] = [
     demoLabel: "Preview Live B2B Card",
   },
   {
-    label: "Summit Pass",
+    label: "Dynamic QR",
     surface: "#f0fdb3",
     accent: "#92b301",
     accentSoft: "#dcf214",
-    title: "Event registration, passes, and check-in",
+    title: "A dynamic QR code that stays current",
     description:
-      "Launch event pages, publish speaker profiles, issue private admission QR passes, and give door staff a fast mobile check-in scanner—all from one organized event workspace.",
+      "Share a high-contrast QR code anywhere and update the destination without reprinting. Export it for screens, badges, presentations, and physical materials.",
     ctaUrl: getAppUrl("/signup"),
-    demoUrl: getAppUrl("/event/apex-2026"),
-    demoLabel: "Live Registration & Passes",
+    demoUrl: "/qr-business-cards",
+    demoLabel: "Explore Dynamic QR",
   },
   {
-    label: "Showcase",
+    label: "NFC Tap",
     surface: "#ffb8e7",
     accent: "#fd4ec2",
     accentSoft: "#ffbee8",
-    title: "Turn every listing into an experience",
+    title: "Share your profile with one NFC tap",
     description:
-      "Present properties, vehicles, products, or pitch decks with rich media, key highlights, downloadable brochures, location details, and a direct inquiry or booking form.",
+      "Pair your live Zuntra profile with a compatible NFC card, ring, or sticker. Recipients tap with their phone and open your latest details instantly.",
     ctaUrl: getAppUrl("/signup"),
-    demoUrl: getAppUrl("/card/villa-bellagio"),
-    demoLabel: "Preview Luxury Listing",
+    demoUrl: "/nfc-business-cards",
+    demoLabel: "Explore NFC Tap",
   },
   {
-    label: "Creator 3D",
+    label: "2-Way Lead Form",
     surface: "#ffe8dd",
     accent: "#da4d09",
     accentSoft: "#f3a985",
-    title: "A portfolio made for your next opportunity",
+    title: "Turn introductions into two-way connections",
     description:
-      "Bring your work, showreel, social links, studio credits, commissions, and payment links into one memorable creator profile that is effortless to share.",
+      "Let recipients share their name, email, phone, company, and context directly through your card so every new connection is ready for follow-up.",
     ctaUrl: getAppUrl("/signup"),
-    demoUrl: getAppUrl("/card/julian-reed"),
-    demoLabel: "Preview Creator 3D",
+    demoUrl: "/lead-capture",
+    demoLabel: "Explore Lead Capture",
   },
 ];
 
@@ -127,63 +127,6 @@ const facts: FactItem[] = [
   { title: "No recipient app", description: "Open profiles in any modern mobile browser" },
   { title: "QR, NFC, or link", description: "Share one live identity across every channel" },
   { title: "Built-in lead capture", description: "Turn introductions into organized contacts" },
-];
-
-const pricingPlans = [
-  {
-    name: "Starter",
-    badge: "Free Forever",
-    price: "$0",
-    period: "forever",
-    description: "Perfect for individual professionals looking to upgrade from paper cards.",
-    features: [
-      "1 Digital Business Card",
-      "Dynamic QR Code & Share Link",
-      "One-Click vCard (.vcf) Export",
-      "Basic Profile Views & Analytics",
-      "Full Mobile Browser Responsiveness",
-    ],
-    buttonText: "Create Free Card",
-    buttonVariant: "light" as const,
-    href: getAppUrl("/signup"),
-  },
-  {
-    name: "Team & Pro",
-    badge: "Most Popular",
-    price: "$19",
-    period: "per month",
-    description: "For teams, agencies, and high-volume networking professionals.",
-    features: [
-      "Up to 25 Member Smart Cards",
-      "Two-Way Lead Capture CRM",
-      "CSV Export & Realtime Telemetry",
-      "Custom Brand Colors & Domain",
-      "Summit Pass & Event Registrations",
-      "Email Signatures & Virtual Backgrounds",
-    ],
-    buttonText: "Start 14-Day Free Trial",
-    buttonVariant: "primary" as const,
-    href: getAppUrl("/signup"),
-    highlighted: true,
-  },
-  {
-    name: "Enterprise",
-    badge: "Custom Scale",
-    price: "$99",
-    period: "per month",
-    description: "For enterprise companies requiring multi-department governance and security.",
-    features: [
-      "Unlimited Cards & Multi-Tenancy",
-      "Department Provisioning & SCIM",
-      "Staff Door Check-in Scanner",
-      "Dedicated Account Manager",
-      "Custom Templates & Enterprise SLA",
-      "Priority 24/7 Concierge Support",
-    ],
-    buttonText: "Deploy Enterprise",
-    buttonVariant: "light" as const,
-    href: getAppUrl("/signup"),
-  },
 ];
 
 const footerNav = [
@@ -417,12 +360,12 @@ export function HomePage() {
           <SectionHeading
             title={
               <>
-                More than a digital
+                More than a prettier
                 <br />
-                business card.
+                QR code.
               </>
             }
-            description="Every scan can become a saved contact, qualified lead, or next action."
+            description="Zuntra carries the relationship beyond the first scan."
           />
           <div className="gallery-grid">
             <div className="gallery-left">
@@ -497,150 +440,6 @@ export function HomePage() {
         <blockquote>
           <span>“The best digital identity turns every introduction into a next step.”</span>
         </blockquote>
-
-        {/* Pricing Section */}
-        <section
-          className="section"
-          id="pricing"
-          style={{
-            background: "#fafafa",
-            borderTop: "0.8px solid #d3d9e5",
-            borderBottom: "0.8px solid #d3d9e5",
-          }}
-        >
-          <SectionHeading
-            title={
-              <>
-                Transparent pricing.
-                <br />
-                For every ambition.
-              </>
-            }
-            description="Start free and scale effortlessly from personal cards to enterprise summits."
-          />
-          <div
-            style={{
-              maxWidth: "1200px",
-              margin: "64px auto 0",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "28px",
-            }}
-          >
-            {pricingPlans.map((plan) => (
-              <div
-                key={plan.name}
-                style={{
-                  background: plan.highlighted ? "#12141b" : "#ffffff",
-                  color: plan.highlighted ? "#ffffff" : "#12141b",
-                  border: plan.highlighted ? "1px solid #12141b" : "1px solid #d3d9e5",
-                  borderRadius: "32px",
-                  padding: "40px 36px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  boxShadow: plan.highlighted ? "0 20px 40px rgba(0,0,0,0.15)" : "none",
-                  position: "relative",
-                }}
-              >
-                <div>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "16px",
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: "14px",
-                        fontWeight: 700,
-                        textTransform: "uppercase",
-                        letterSpacing: "1px",
-                        color: plan.highlighted ? "#dfff52" : "#395afa",
-                      }}
-                    >
-                      {plan.name}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: "11px",
-                        fontWeight: 600,
-                        padding: "4px 10px",
-                        borderRadius: "999px",
-                        background: plan.highlighted ? "rgba(255,255,255,0.15)" : "#f0f2f5",
-                        color: plan.highlighted ? "#ffffff" : "#45515e",
-                      }}
-                    >
-                      {plan.badge}
-                    </span>
-                  </div>
-
-                  <div style={{ display: "flex", alignItems: "baseline", gap: "6px", margin: "16px 0 12px" }}>
-                    <span style={{ fontSize: "52px", fontWeight: 700, letterSpacing: "-1.5px", lineHeight: 1 }}>
-                      {plan.price}
-                    </span>
-                    <span style={{ fontSize: "14px", color: plan.highlighted ? "#92969f" : "#67675e" }}>
-                      / {plan.period}
-                    </span>
-                  </div>
-
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      lineHeight: "1.5",
-                      color: plan.highlighted ? "#c9c9c9" : "#67675e",
-                      margin: "0 0 28px",
-                    }}
-                  >
-                    {plan.description}
-                  </p>
-
-                  <div
-                    style={{
-                      borderTop: plan.highlighted ? "1px solid rgba(255,255,255,0.15)" : "1px solid #e5e7eb",
-                      paddingTop: "24px",
-                      marginBottom: "32px",
-                    }}
-                  >
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        padding: 0,
-                        margin: 0,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "12px",
-                      }}
-                    >
-                      {plan.features.map((feat) => (
-                        <li key={feat} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px" }}>
-                          <span style={{ color: plan.highlighted ? "#dfff52" : "#1ba673", fontWeight: 700 }}>✓</span>
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <a
-                  href={plan.href}
-                  className="pill"
-                  style={{
-                    width: "100%",
-                    backgroundColor: plan.highlighted ? "#dfff52" : "#12141b",
-                    color: plan.highlighted ? "#12141b" : "#ffffff",
-                    borderColor: plan.highlighted ? "#dfff52" : "#12141b",
-                    fontWeight: 700,
-                  }}
-                >
-                  {plan.buttonText} →
-                </a>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* FAQ Section */}
         <FAQ />

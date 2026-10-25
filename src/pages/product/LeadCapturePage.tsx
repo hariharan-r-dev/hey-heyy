@@ -13,7 +13,9 @@ export const LeadCapturePage: React.FC = () => {
       {...{
         slug: 'lead-capture',
     category: 'Products',
-    badge: 'LEAD GENERATION',
+    badge: '2-Way Lead Form',
+    badgeColor: '#da4d09',
+    badgeLayerColor: '#f3a985',
     title: 'Two-Way Contact & Lead Capture',
     headline: 'Collect verified contact info from everyone who scans your card.',
     subheadline: 'Turn your card into an active lead generation tool. Recipients tap "Connect" to send their details straight into your workspace CRM.',

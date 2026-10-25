@@ -14,7 +14,9 @@ export const QrBusinessCardsPage: React.FC = () => {
       {...{
         slug: 'qr-business-cards',
     category: 'Products',
-    badge: 'SCAN & CONNECT',
+    badge: 'Dynamic QR',
+    badgeColor: '#92b301',
+    badgeLayerColor: '#dcf214',
     title: 'QR Code Business Cards',
     headline: 'High-contrast dynamic QR codes engineered for fast camera scans.',
     subheadline: 'Display your QR code from your smartphone lockscreen, wallet, or video call background for effortless contact sharing in any lighting condition.',

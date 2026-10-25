@@ -342,7 +342,6 @@ export const SolutionsPage: React.FC = () => {
                 }}
               >
                 <span>Compare Pricing Plans</span>
-                <span aria-hidden="true">→</span>
               </a>
             </div>
 
@@ -487,7 +486,6 @@ export const SolutionsPage: React.FC = () => {
 
                   <div style={{ marginTop: "28px", display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "13px", fontWeight: 700, color: aud.accent }}>
                     <span>View dedicated workflow</span>
-                    <span>→</span>
                   </div>
                 </a>
               );

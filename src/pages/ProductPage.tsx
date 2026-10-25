@@ -370,7 +370,6 @@ export const ProductPage: React.FC = () => {
                   }}
                 >
                   <span>See How It Works</span>
-                  <span aria-hidden="true">→</span>
                 </a>
               </div>
 
@@ -522,7 +521,6 @@ export const ProductPage: React.FC = () => {
 
                     <div style={{ marginTop: "24px", display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "13px", fontWeight: 700, color: item.accent }}>
                       <span>Explore details</span>
-                      <span>→</span>
                     </div>
                   </a>
                 );

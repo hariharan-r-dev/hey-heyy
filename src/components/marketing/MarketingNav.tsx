@@ -46,7 +46,7 @@ export const MarketingNav: React.FC = () => {
   }, []);
 
   const primaryCtaHref = user ? '/admin' : '/signup';
-  const primaryCtaText = user ? 'Open Workspace' : 'Create Your Card →';
+  const primaryCtaText = user ? 'Open Workspace' : 'Create Your Card';
 
   return (
     <header className="marketing-nav-shell border-b border-hairline bg-white/95 backdrop-blur-md sticky top-0 z-50 transition-colors font-sans" ref={navRef}>

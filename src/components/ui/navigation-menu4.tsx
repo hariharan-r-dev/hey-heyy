@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -40,6 +41,8 @@ export default function NavigationMenu4({
 }: {
   onNavigate?: () => void;
 }) {
+  const [mobileSection, setMobileSection] = useState<string | null>(null);
+
   const menus: readonly MenuDefinition[] = [
     {
       label: "Product",
@@ -156,7 +159,8 @@ export default function NavigationMenu4({
   ];
 
   return (
-    <NavigationMenu className="product-navigation">
+    <>
+    <NavigationMenu className="product-navigation desktop-product-navigation">
       <NavigationMenuList className="flex items-center gap-1">
         {menus.map((menu) => (
           <NavigationMenuItem key={menu.label}>
@@ -256,5 +260,66 @@ export default function NavigationMenu4({
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
+    <div className="mobile-product-navigation" aria-label="Mobile navigation">
+      <div className="mobile-nav-group">
+        <button type="button" aria-expanded={mobileSection === 'product'} onClick={() => setMobileSection(mobileSection === 'product' ? null : 'product')}>Product</button>
+        {mobileSection === 'product' && (
+          <div className="mobile-nav-submenu">
+            <a href="/product" onClick={onNavigate}>Product Overview</a>
+            <a href="/digital-business-cards" onClick={onNavigate}>Digital Business Cards</a>
+            <a href="/qr-business-cards" onClick={onNavigate}>QR Business Cards</a>
+            <a href="/nfc-business-cards" onClick={onNavigate}>NFC Smart Cards</a>
+            <a href="/email-signatures" onClick={onNavigate}>Email Signatures</a>
+            <a href="/virtual-backgrounds" onClick={onNavigate}>Virtual Backgrounds</a>
+            <a href="/lead-capture" onClick={onNavigate}>Lead Capture</a>
+            <a href="/analytics" onClick={onNavigate}>Analytics</a>
+          </div>
+        )}
+      </div>
+      <div className="mobile-nav-group">
+        <button type="button" aria-expanded={mobileSection === 'solutions'} onClick={() => setMobileSection(mobileSection === 'solutions' ? null : 'solutions')}>Solutions</button>
+        {mobileSection === 'solutions' && (
+          <div className="mobile-nav-submenu">
+            <a href="/solutions" onClick={onNavigate}>Solutions Overview</a>
+            <a href="/individuals" onClick={onNavigate}>For Individuals</a>
+            <a href="/freelancers" onClick={onNavigate}>For Freelancers</a>
+            <a href="/small-business" onClick={onNavigate}>For Small Business</a>
+            <a href="/teams" onClick={onNavigate}>For Teams</a>
+            <a href="/enterprise" onClick={onNavigate}>For Enterprise</a>
+            <a href="/sales-teams" onClick={onNavigate}>For Sales Teams</a>
+          </div>
+        )}
+      </div>
+      <div className="mobile-nav-group">
+        <button type="button" aria-expanded={mobileSection === 'resources'} onClick={() => setMobileSection(mobileSection === 'resources' ? null : 'resources')}>Resources</button>
+        {mobileSection === 'resources' && (
+          <div className="mobile-nav-submenu">
+            <a href="/blog" onClick={onNavigate}>Blog & Articles</a>
+            <a href="/faq" onClick={onNavigate}>Frequently Asked Questions</a>
+            <a href="/contact" onClick={onNavigate}>Contact Support</a>
+            <a href="/book-a-demo" onClick={onNavigate}>Book a Demo</a>
+          </div>
+        )}
+      </div>
+      <div className="mobile-nav-group">
+        <button type="button" aria-expanded={mobileSection === 'company'} onClick={() => setMobileSection(mobileSection === 'company' ? null : 'company')}>Company</button>
+        {mobileSection === 'company' && (
+          <div className="mobile-nav-submenu">
+            <a href="/about" onClick={onNavigate}>About Zuntra</a>
+            <a href="/how-it-works" onClick={onNavigate}>How It Works</a>
+            <a href="/careers" onClick={onNavigate}>Careers</a>
+            <a href="/security" onClick={onNavigate}>Security</a>
+            <a href="/privacy" onClick={onNavigate}>Privacy Policy</a>
+            <a href="/terms" onClick={onNavigate}>Terms of Service</a>
+          </div>
+        )}
+      </div>
+      <a href="/pricing" onClick={onNavigate}>Pricing</a>
+      <div className="mobile-nav-actions">
+        <a className="mobile-nav-login" href={getAppUrl('/login')} onClick={onNavigate}>Log in</a>
+        <a className="mobile-nav-cta" href={getAppUrl('/signup')} onClick={onNavigate}><span>Start free trial</span><span aria-hidden="true">&#8594;</span></a>
+      </div>
+    </div>
+    </>
   );
 }

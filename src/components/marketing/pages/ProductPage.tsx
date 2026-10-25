@@ -150,7 +150,7 @@ export const ProductPage: React.FC = () => {
                       <p className="text-xs text-slate leading-relaxed">{item.description}</p>
                     </div>
                     <span className="text-xs font-bold text-brand-blue group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                      Learn more →
+                      Learn more
                     </span>
                   </a>
                 ))}
