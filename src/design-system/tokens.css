@@ -1,0 +1,52 @@
+:root {
+  /* Brand and neutral colors */
+  --z-color-ink: #12141b;
+  --z-color-canvas: #fbfbfb;
+  --z-color-surface: #ffffff;
+  --z-color-text-muted: #67675e;
+  --z-color-border: #d3d9e5;
+  --z-color-border-strong: #717171;
+  --z-color-brand-blue: #3151ff;
+  --z-color-link-blue: #005bc5;
+  --z-color-lime: #dfff52;
+  --z-color-sky: #a5cefd;
+  --z-color-mint: #99eeb8;
+
+  /* Typography */
+  --z-font-body: "DM Sans:Regular", sans-serif;
+  --z-font-medium: "DM Sans:Medium", sans-serif;
+  --z-font-semibold: "DM Sans:SemiBold", sans-serif;
+  --z-font-support: "Manrope:Medium", sans-serif;
+  --z-font-display-size: clamp(46px, 5vw, 72px);
+  --z-font-section-size: clamp(42px, 4.45vw, 64px);
+  --z-line-display: 1.08;
+
+  /* Spacing */
+  --z-space-1: 4px;
+  --z-space-2: 8px;
+  --z-space-3: 12px;
+  --z-space-4: 16px;
+  --z-space-5: 20px;
+  --z-space-6: 24px;
+  --z-space-8: 32px;
+  --z-space-12: 48px;
+  --z-space-16: 64px;
+  --z-space-24: 96px;
+  --z-space-30: 120px;
+
+  /* Shape, elevation, and motion */
+  --z-radius-sm: 13px;
+  --z-radius-md: 24px;
+  --z-radius-lg: 32px;
+  --z-radius-card: 44.58px;
+  --z-radius-pill: 999px;
+  --z-shadow-card: 0 6px 18px -10px rgba(18, 20, 27, 0.18);
+  --z-duration-fast: 200ms;
+  --z-duration-medium: 350ms;
+  --z-ease-standard: ease;
+
+  /* Layout */
+  --z-header-height: 76px;
+  --z-content-max: 1200px;
+  --z-page-gutter: max(5.33vw, 28px);
+}
