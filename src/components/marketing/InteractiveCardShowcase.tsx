@@ -175,9 +175,9 @@ export const InteractiveCardShowcase: React.FC<InteractiveCardShowcaseProps> = (
         {activeTab === 'card' && (
           <div role="tabpanel" id="panel-card" aria-labelledby="tab-card" className="grid lg:grid-cols-[auto_minmax(0,1fr)] items-center justify-items-center lg:justify-items-stretch gap-10 lg:gap-16 max-w-4xl mx-auto w-full">
             {/* Phone Mockup Frame */}
-            <div className="w-full max-w-[332px] mx-auto rounded-[48px] bg-[#080b12] p-[7px] shadow-[0_30px_70px_rgba(15,23,42,.28)] border border-[#334155] relative">
+            <div className="demo-phone-frame w-full max-w-[400px] mx-auto rounded-[58px] bg-[#080b12] p-[9px] border border-[#334155] relative">
               {/* Mobile Screen */}
-              <div className="w-full rounded-[40px] bg-[#f8fafc] overflow-hidden border border-white/10 text-ink flex flex-col">
+              <div className="demo-phone-screen w-full rounded-[49px] bg-[#f8fafc] overflow-hidden border border-white/10 text-ink flex flex-col">
                 {/* Realistic Status Bar */}
                 <div className="relative px-6 pt-3 pb-2 flex items-center justify-between bg-[#0f172a] text-white text-[9px] font-bold tracking-tight">
                   <span>9:41</span>

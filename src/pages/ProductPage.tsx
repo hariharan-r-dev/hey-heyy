@@ -275,6 +275,7 @@ export const ProductPage: React.FC = () => {
       <main>
         {/* Hero Section */}
         <section
+          className="product-overview-hero"
           style={{
             position: "relative",
             minHeight: "640px",
@@ -286,17 +287,18 @@ export const ProductPage: React.FC = () => {
           }}
         >
           <div
+            className="product-overview-hero-grid"
             style={{
               maxWidth: "1200px",
               margin: "0 auto",
               width: "100%",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "48px",
+              gridTemplateColumns: "minmax(0, 1fr)",
+              gap: "56px",
               alignItems: "center",
             }}
           >
-            <div>
+            <div className="product-overview-hero-copy" style={{ maxWidth: "760px" }}>
               {/* Breadcrumb */}
               <div
                 style={{
@@ -373,45 +375,11 @@ export const ProductPage: React.FC = () => {
                 </a>
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "18px",
-                  marginTop: "28px",
-                  fontSize: "12px",
-                  color: "#67675e",
-                  fontWeight: 500,
-                  flexWrap: "wrap",
-                }}
-              >
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                  <Check size={14} color="#1ba673" strokeWidth={3} /> No app required for recipients
-                </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                  <Check size={14} color="#1ba673" strokeWidth={3} /> Apple & Google Contacts 1-tap save
-                </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                  <Check size={14} color="#1ba673" strokeWidth={3} /> Free plan includes 2 cards
-                </span>
-              </div>
             </div>
 
             {/* Right Interactive Simulator Preview */}
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div
-                style={{
-                  width: "100%",
-                  maxWidth: "460px",
-                  background: "#ffffff",
-                  border: "1px solid #d3d9e5",
-                  borderRadius: "36px",
-                  padding: "24px",
-                  boxShadow: "0 20px 48px -12px rgba(18, 20, 27, 0.12)",
-                }}
-              >
-                <InteractiveCardShowcase compact={true} />
-              </div>
+            <div className="product-overview-hero-preview" style={{ display: "flex", justifyContent: "center" }}>
+              <InteractiveCardShowcase />
             </div>
           </div>
         </section>
