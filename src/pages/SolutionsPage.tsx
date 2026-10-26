@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavigationMenu4 from "@/components/ui/navigation-menu4";
+import { MarketingBreadcrumb } from "@/components/marketing/MarketingBreadcrumb";
 import {
   Accordion,
   FactStrip,
@@ -245,6 +246,8 @@ export const SolutionsPage: React.FC = () => {
         </button>
       </header>
 
+      <MarketingBreadcrumb current="Solutions" accent="#92b301" />
+
       <main>
         {/* Solutions Hero */}
         <section
@@ -266,27 +269,6 @@ export const SolutionsPage: React.FC = () => {
               textAlign: "center",
             }}
           >
-            {/* Breadcrumb */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                fontSize: "12px",
-                fontFamily: "var(--z-font-support, sans-serif)",
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                color: "#67675e",
-                marginBottom: "20px",
-              }}
-            >
-              <a href="/" style={{ color: "#67675e", textDecoration: "none" }}>
-                Home
-              </a>
-              <span>/</span>
-              <span style={{ color: "#92b301", fontWeight: 700 }}>Solutions</span>
-            </div>
-
             <div>
               <StackedBadge color="#92b301" layerColor="#dcf214" className="mb-4">
                 Tailored Workflows
@@ -328,46 +310,11 @@ export const SolutionsPage: React.FC = () => {
               <PillButton href={getAppUrl("/signup")} showArrow>
                 Find Your Solution
               </PillButton>
-              <a
-                href="/pricing"
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  color: "#12141b",
-                  textDecoration: "underline",
-                  textUnderlineOffset: "4px",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                }}
-              >
-                <span>Compare Pricing Plans</span>
-              </a>
+              <PillButton href="/pricing" variant="secondary">
+                Compare Pricing Plans
+              </PillButton>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "24px",
-                marginTop: "36px",
-                fontSize: "12px",
-                color: "#67675e",
-                fontWeight: 500,
-                flexWrap: "wrap",
-              }}
-            >
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                <Check size={14} color="#1ba673" strokeWidth={3} /> Solo pros to Fortune 500
-              </span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                <Check size={14} color="#1ba673" strokeWidth={3} /> Department brand controls
-              </span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                <Check size={14} color="#1ba673" strokeWidth={3} /> Instant CSV & CRM lead sync
-              </span>
-            </div>
           </div>
         </section>
 

@@ -15,7 +15,7 @@ export const FaqPage: React.FC = () => {
     category: 'Resources',
     badge: 'COMMON QUESTIONS',
     title: 'Frequently Asked Questions',
-    headline: 'Everything you need to know about Zuntra Cards.',
+    headline: <>Everything you need to<br />know about Zuntra Cards.</>,
     subheadline: 'Clear answers on card creation, recipient experience, NFC compatibility, privacy, and team management.',
     keyFeatures: [
       { title: 'Zero App Footprint', description: 'Neither you nor your contacts need to install a mobile app to create, view, or save contact details.', icon: Smartphone },

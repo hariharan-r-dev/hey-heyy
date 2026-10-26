@@ -65,8 +65,8 @@
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border: 1px solid transparent; border-radius: 9999px; font-size: 14px; font-weight: 500; line-height: 1.3; transition: background-color .18s, box-shadow .18s; }
   .btn-primary { background: var(--color-primary); color: white; }
   .btn-primary:hover { background: var(--color-charcoal); }
-  .btn-secondary { background: white; color: var(--color-ink); border-color: var(--color-hairline-strong); }
-  .btn-secondary:hover { background: var(--color-surface); }
+  .btn-secondary { background: transparent; color: #12141b; border-color: #12141b; }
+  .btn-secondary:hover { background: #12141b; color: #fff; }
   .btn-ghost { background: transparent; color: inherit; padding: 8px 12px; border-radius: 8px; }
   .btn-ghost:hover { background: var(--color-surface); }
   .btn-link { background: transparent; color: var(--color-brand-blue); padding: 0; }
@@ -366,7 +366,7 @@
 .marketing-page { background: var(--color-canvas); color: var(--color-ink); }
 .marketing-page .btn-primary { background: var(--color-primary); border-radius: var(--radius-full); color: white; }
 .marketing-page .btn-primary:hover { background: var(--color-charcoal); }
-.marketing-page .btn-secondary { background: white; color: var(--color-ink); border-color: var(--color-hairline-strong); border-radius: var(--radius-full); }
+.marketing-page .btn-secondary { background: transparent; color: #12141b; border-color: #12141b; border-radius: var(--radius-full); }
 .marketing-page .eyebrow { color: var(--color-slate); }
 .marketing-header { max-width: 1400px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 6%; border-bottom: 1px solid var(--color-hairline); }
 .wordmark { font-size: 29px; font-weight: 700; letter-spacing: -1.5px; }
@@ -1661,6 +1661,26 @@
   font-weight: 600;
 }
 
+.pill-secondary {
+  color: #12141b;
+  background: transparent;
+  border-color: #12141b;
+}
+
+.pill-secondary:hover {
+  color: #fff;
+  background: #12141b;
+  opacity: 1;
+}
+
+.pill-secondary img {
+  filter: brightness(0);
+}
+
+.pill-secondary:hover img {
+  filter: brightness(0) invert(1);
+}
+
 .site .menu {
   display: none;
   border: 0;
@@ -1670,6 +1690,110 @@
 
 .mobile-product-navigation {
   display: none;
+}
+
+.marketing-breadcrumb {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  margin: 0;
+  padding: 18px max(5.55vw, 40px);
+  background: #fbfbfb;
+  color: #67675e;
+  font: 600 12px/1.3 var(--z-font-support);
+  letter-spacing: .01em;
+  text-transform: none;
+}
+
+.marketing-breadcrumb-center ol {
+  justify-content: flex-start;
+}
+
+.marketing-breadcrumb ol {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.marketing-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.marketing-breadcrumb a:hover {
+  color: #12141b;
+}
+
+.marketing-breadcrumb-current {
+  font-weight: 600;
+}
+
+.marketing-breadcrumb-menu details {
+  position: relative;
+}
+
+.marketing-breadcrumb-menu summary {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  list-style: none;
+  color: #67675e;
+}
+
+.marketing-breadcrumb-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.marketing-breadcrumb-menu summary:hover,
+.marketing-breadcrumb-menu details[open] summary {
+  background: #f2f3ee;
+  color: #12141b;
+}
+
+.marketing-breadcrumb-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 20;
+  width: 180px;
+  padding: 6px;
+  display: grid;
+  gap: 2px;
+  border: 1px solid #d3d9e5;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(18, 20, 27, .12);
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.marketing-breadcrumb-popover a {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 8px;
+  color: #12141b;
+  font-size: 13px;
+}
+
+.marketing-breadcrumb-popover a:hover {
+  background: #f2f3ee;
+  color: #3151ff;
+}
+
+@media (max-width: 760px) {
+  .marketing-breadcrumb {
+    padding: 14px 20px;
+  }
 }
 
 /* Hero Section */

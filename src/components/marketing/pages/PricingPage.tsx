@@ -13,7 +13,7 @@ const plans = [
     monthlyPrice: 0,
     annualPrice: 0,
     cta: 'Get Started Free',
-    ctaStyle: 'border border-ink text-ink hover:bg-surface',
+    ctaStyle: 'border border-ink bg-transparent text-ink hover:bg-ink hover:text-white',
     features: {
       'Digital business cards': '2 cards',
       'QR code sharing': true,

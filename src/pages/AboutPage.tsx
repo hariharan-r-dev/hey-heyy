@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavigationMenu4 from "@/components/ui/navigation-menu4";
+import { MarketingBreadcrumb } from "@/components/marketing/MarketingBreadcrumb";
 import {
   Accordion,
   FactStrip,
@@ -193,6 +194,8 @@ export const AboutPage: React.FC = () => {
         </button>
       </header>
 
+      <MarketingBreadcrumb current="About Us" />
+
       <main>
         {/* About Hero */}
         <section
@@ -214,27 +217,6 @@ export const AboutPage: React.FC = () => {
               textAlign: "center",
             }}
           >
-            {/* Breadcrumb */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                fontSize: "12px",
-                fontFamily: "var(--z-font-support, sans-serif)",
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                color: "#67675e",
-                marginBottom: "20px",
-              }}
-            >
-              <a href="/" style={{ color: "#67675e", textDecoration: "none" }}>
-                Home
-              </a>
-              <span>/</span>
-              <span style={{ color: "#395afa", fontWeight: 700 }}>About Us</span>
-            </div>
-
             <div>
               <StackedBadge color="#395afa" layerColor="#bedffe" className="mb-4">
                 Our Mission & Principles
@@ -276,21 +258,9 @@ export const AboutPage: React.FC = () => {
               <PillButton href={getAppUrl("/signup")} showArrow>
                 Join the Movement
               </PillButton>
-              <a
-                href="/contact"
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  color: "#12141b",
-                  textDecoration: "underline",
-                  textUnderlineOffset: "4px",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                }}
-              >
-                <span>Talk to Our Team</span>
-              </a>
+              <PillButton href="/contact" variant="secondary">
+                Talk to Our Team
+              </PillButton>
             </div>
           </div>
         </section>

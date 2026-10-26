@@ -851,7 +851,7 @@ export const TopicPageView: React.FC<{ slug: string }> = ({ slug }) => {
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-7xl text-ink font-semibold tracking-[-2px] leading-tight">
-              {data.headline}
+              {slug === 'faq' ? <>Everything you need to<br />know about Zuntra Cards.</> : data.headline}
             </h1>
 
             <p className="text-base sm:text-xl text-slate max-w-3xl mx-auto leading-relaxed">
@@ -868,15 +868,12 @@ export const TopicPageView: React.FC<{ slug: string }> = ({ slug }) => {
               </a>
               <a
                 href={actions.secondaryHref}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white border border-ink hover:bg-surface text-ink text-sm font-semibold transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-transparent border border-ink hover:bg-ink hover:text-white text-ink text-sm font-semibold transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>{actions.secondaryLabel}</span>
               </a>
             </div>
 
-            <p className="text-xs text-steel pt-2">
-              {data.keyFeatures.slice(0, 2).map((feature) => feature.title).join(' • ')}
-            </p>
           </div>
           {data.visual ? (
             <TopicProductVisual visual={data.visual} priority={true} />

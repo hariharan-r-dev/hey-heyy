@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavigationMenu4 from "@/components/ui/navigation-menu4";
+import { MarketingBreadcrumb } from "@/components/marketing/MarketingBreadcrumb";
 import {
   Accordion,
   FactStrip,
@@ -188,6 +189,8 @@ export const ContactPage: React.FC = () => {
         </button>
       </header>
 
+      <MarketingBreadcrumb current="Contact Us" />
+
       <main>
         {/* Contact Hero */}
         <section
@@ -209,27 +212,6 @@ export const ContactPage: React.FC = () => {
               textAlign: "center",
             }}
           >
-            {/* Breadcrumb */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                fontSize: "12px",
-                fontFamily: "var(--z-font-support, sans-serif)",
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                color: "#67675e",
-                marginBottom: "20px",
-              }}
-            >
-              <a href="/" style={{ color: "#67675e", textDecoration: "none" }}>
-                Home
-              </a>
-              <span>/</span>
-              <span style={{ color: "#395afa", fontWeight: 700 }}>Contact Us</span>
-            </div>
-
             <div>
               <StackedBadge color="#395afa" layerColor="#bedffe" className="mb-4">
                 We're Here to Help
@@ -364,21 +346,9 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div style={{ marginTop: "24px" }}>
-                    <a
-                      href={reason.href}
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "6px",
-                        fontSize: "13px",
-                        fontWeight: 700,
-                        color: reason.accent,
-                        textDecoration: "underline",
-                        textUnderlineOffset: "4px",
-                      }}
-                    >
-                      <span>{reason.cta}</span>
-                    </a>
+                    <PillButton href={reason.href} variant="secondary">
+                      {reason.cta}
+                    </PillButton>
                   </div>
                 </div>
               );

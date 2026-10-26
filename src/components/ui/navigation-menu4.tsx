@@ -12,7 +12,6 @@ import { getAppUrl } from "@/utils/app-url";
 const assetPathPrefix = "/assets";
 
 type FeaturedItem = {
-  eyebrow: string;
   title: string;
   description: string;
   href: string;
@@ -50,21 +49,18 @@ export default function NavigationMenu4({
       toolsLabel: "Products & Tools",
       featured: [
         {
-          eyebrow: "Platform",
           title: "Product Overview",
           description: "Explore Zuntra’s four connected identity products.",
           href: "/product",
           tone: "bg-[#eaf6ff]",
         },
         {
-          eyebrow: "Corporate B2B",
           title: "Digital Business Cards",
           description: "Experience the live executive smart card with instant vCard save.",
           href: "/digital-business-cards",
           tone: "bg-[#ffb8e7]",
         },
         {
-          eyebrow: "Live Pass Demo",
           title: "Summit Pass & Check-In",
           description: "Preview live attendee registration and door scanner.",
           href: getAppUrl("/event/apex-2026"),
@@ -90,21 +86,18 @@ export default function NavigationMenu4({
       toolsLabel: "Built for",
       featured: [
         {
-          eyebrow: "Discover",
           title: "Solutions Overview",
           description: "Find the right workflow for people, teams, and events.",
           href: "/solutions",
           tone: "bg-[#eaf6ff]",
         },
         {
-          eyebrow: "Personal",
           title: "For Individuals",
           description: "Make every introduction easy to remember and save.",
           href: "/individuals",
           tone: "bg-[#ffb8e7]",
         },
         {
-          eyebrow: "Collaborate",
           title: "For Teams",
           description: "Manage brand, people, cards, leads, and insights.",
           href: "/teams",
@@ -126,21 +119,18 @@ export default function NavigationMenu4({
       toolsLabel: "Support & Company",
       featured: [
         {
-          eyebrow: "Explore",
           title: "Frequently Asked Questions",
           description: "Everything about NFC cards, privacy, and CRM sync.",
           href: "/faq",
           tone: "bg-[#eaf6ff]",
         },
         {
-          eyebrow: "Guides",
           title: "How It Works",
           description: "From setup to your first scan in under 3 minutes.",
           href: "/how-it-works",
           tone: "bg-[#eaf6ff]",
         },
         {
-          eyebrow: "Plans",
           title: "Pricing & Tiers",
           description: "Transparent pricing for individuals, teams, and summits.",
           href: "/pricing",
@@ -183,9 +173,6 @@ export default function NavigationMenu4({
                         onClick={onNavigate}
                         className={`block p-3.5 rounded-2xl ${item.tone} hover:opacity-90 transition-all border border-black/5 group`}
                       >
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#5f5f5f] block">
-                          {item.eyebrow}
-                        </span>
                         <div className="flex items-center justify-between">
                           <strong className="text-sm font-semibold text-[#12141b] block group-hover:translate-x-0.5 transition-transform">
                             {item.title}

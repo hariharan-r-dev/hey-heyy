@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavigationMenu4 from "@/components/ui/navigation-menu4";
+import { MarketingBreadcrumb } from "@/components/marketing/MarketingBreadcrumb";
 import {
   Accordion,
   FactStrip,
@@ -272,6 +273,8 @@ export const ProductPage: React.FC = () => {
         </button>
       </header>
 
+      <MarketingBreadcrumb current="Products" />
+
       <main>
         {/* Hero Section */}
         <section
@@ -299,27 +302,6 @@ export const ProductPage: React.FC = () => {
             }}
           >
             <div className="product-overview-hero-copy" style={{ maxWidth: "760px" }}>
-              {/* Breadcrumb */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  fontSize: "12px",
-                  fontFamily: "var(--z-font-support, sans-serif)",
-                  textTransform: "uppercase",
-                  letterSpacing: "1px",
-                  color: "#67675e",
-                  marginBottom: "20px",
-                }}
-              >
-                <a href="/" style={{ color: "#67675e", textDecoration: "none" }}>
-                  Home
-                </a>
-                <span>/</span>
-                <span style={{ color: "#395afa", fontWeight: 700 }}>Products</span>
-              </div>
-
               <StackedBadge color="#395afa" layerColor="#bedffe" className="mb-4">
                 Complete Identity Suite
               </StackedBadge>
@@ -358,21 +340,9 @@ export const ProductPage: React.FC = () => {
                 <PillButton href={getAppUrl("/signup")} showArrow>
                   Create Your Free Card
                 </PillButton>
-                <a
-                  href="/how-it-works"
-                  style={{
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    color: "#12141b",
-                    textDecoration: "underline",
-                    textUnderlineOffset: "4px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                  }}
-                >
-                  <span>See How It Works</span>
-                </a>
+                <PillButton href="/how-it-works" variant="secondary">
+                  See How It Works
+                </PillButton>
               </div>
 
             </div>

@@ -2,7 +2,7 @@ import { useState, type CSSProperties, type ReactNode } from "react";
 
 const ASSET_PATH = "/assets";
 
-export type ButtonVariant = "primary" | "light";
+export type ButtonVariant = "primary" | "secondary" | "light";
 
 type PillButtonProps = {
   children: ReactNode;
@@ -10,6 +10,8 @@ type PillButtonProps = {
   variant?: ButtonVariant;
   showArrow?: boolean;
   className?: string;
+  target?: "_blank" | "_self";
+  rel?: string;
 };
 
 export function PillButton({
@@ -18,13 +20,20 @@ export function PillButton({
   variant = "primary",
   showArrow = false,
   className = "",
+  target,
+  rel,
 }: PillButtonProps) {
-  const classes = ["pill", variant === "light" ? "pill-light" : "", className]
+  const classes = [
+    "pill",
+    variant === "secondary" ? "pill-secondary" : "",
+    variant === "light" ? "pill-light" : "",
+    className,
+  ]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <a className={classes} href={href}>
+    <a className={classes} href={href} target={target} rel={rel}>
       {children}
       {showArrow && <img src={`${ASSET_PATH}/3622d.svg`} alt="" />}
     </a>
@@ -129,23 +138,9 @@ export function ProductCard({ item, index }: { item: ProductCardData; index: num
         <div style={{ display: "flex", alignItems: "center", gap: "16px", marginTop: "auto", flexWrap: "wrap" }}>
           <PillButton href={item.ctaUrl || "#create"}>Create with Zuntra</PillButton>
           {item.demoUrl && (
-            <a
-              href={item.demoUrl}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                fontSize: "14px",
-                fontWeight: 600,
-                color: "#12141b",
-                textDecoration: "underline",
-                textUnderlineOffset: "4px",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-              }}
-            >
-              <span>{item.demoLabel || "Preview Live Demo"}</span>
-            </a>
+            <PillButton href={item.demoUrl} variant="secondary" target="_blank" rel="noreferrer">
+              {item.demoLabel || "Preview Live Demo"}
+            </PillButton>
           )}
         </div>
       </div>

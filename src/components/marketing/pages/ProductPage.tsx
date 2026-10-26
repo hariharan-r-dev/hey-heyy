@@ -91,7 +91,7 @@ export const ProductPage: React.FC = () => {
               </a>
               <a
                 href="/how-it-works"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white border border-ink hover:bg-surface text-ink text-sm font-semibold transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-transparent border border-ink hover:bg-ink hover:text-white text-ink text-sm font-semibold transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>See How It Works</span>
               </a>

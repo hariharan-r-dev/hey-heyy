@@ -186,7 +186,7 @@ export const AboutPage: React.FC = () => {
               </a>
               <a
                 href="/contact-us"
-                className="px-7 py-3 rounded-full bg-white border border-ink hover:bg-surface text-ink text-sm font-semibold transition-all inline-flex items-center gap-2 cursor-pointer"
+                className="px-7 py-3 rounded-full bg-transparent border border-ink hover:bg-ink hover:text-white text-ink text-sm font-semibold transition-all inline-flex items-center gap-2 cursor-pointer"
               >
                 <span>Get in Touch</span>
               </a>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavigationMenu4 from "@/components/ui/navigation-menu4";
+import { MarketingBreadcrumb } from "@/components/marketing/MarketingBreadcrumb";
 import {
   Accordion,
   FactStrip,
@@ -292,6 +293,8 @@ export function DigitalBusinessCardsPage() {
         </button>
       </header>
 
+      <MarketingBreadcrumb current="Digital Cards" parent={{ label: "Product", href: "/product" }} />
+
       <main>
         {/* Product Hero Section */}
         <section
@@ -318,31 +321,6 @@ export function DigitalBusinessCardsPage() {
           >
             {/* Left Copy Column */}
             <div>
-              {/* Breadcrumb */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  fontSize: "12px",
-                  fontFamily: "var(--z-font-support, sans-serif)",
-                  textTransform: "uppercase",
-                  letterSpacing: "1px",
-                  color: "#67675e",
-                  marginBottom: "20px",
-                }}
-              >
-                <a href="/" style={{ color: "#67675e", textDecoration: "none" }}>
-                  Home
-                </a>
-                <span>/</span>
-                <a href="/product" style={{ color: "#67675e", textDecoration: "none" }}>
-                  Product
-                </a>
-                <span>/</span>
-                <span style={{ color: "#395afa", fontWeight: 700 }}>Digital Cards</span>
-              </div>
-
               {/* Stacked Badge */}
               <StackedBadge color="#395afa" layerColor="#bedffe" className="mb-4">
                 Digital Business Cards
@@ -383,24 +361,15 @@ export function DigitalBusinessCardsPage() {
                 <PillButton href={getAppUrl("/signup")} showArrow>
                   Create Your Card Free
                 </PillButton>
-                <a
+                <PillButton
                   href={getAppUrl("/card/praneeth-sivala")}
+                  variant="secondary"
                   target="_blank"
                   rel="noreferrer"
-                  style={{
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    color: "#12141b",
-                    textDecoration: "underline",
-                    textUnderlineOffset: "4px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                  }}
                 >
                   <span>Preview Live B2B Card</span>
                   <span aria-hidden="true">↗</span>
-                </a>
+                </PillButton>
               </div>
 
             </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavigationMenu4 from "@/components/ui/navigation-menu4";
+import { MarketingBreadcrumb } from "@/components/marketing/MarketingBreadcrumb";
 import {
   Accordion,
   FactStrip,
@@ -25,7 +26,7 @@ export interface TopicPageConfig {
   badgeColor?: string;
   badgeLayerColor?: string;
   title: string;
-  headline: string;
+  headline: React.ReactNode;
   subheadline: string;
   visual?: TopicVisualSpec;
   keyFeatures: {
@@ -249,6 +250,8 @@ export const TopicPageLayout: React.FC<TopicPageConfig> = (props) => {
         </button>
       </header>
 
+      <MarketingBreadcrumb current={props.title} parent={{ label: props.category }} accent={tone.color} />
+
       <main>
         {/* Product / Topic Hero Section */}
         <section
@@ -275,29 +278,6 @@ export const TopicPageLayout: React.FC<TopicPageConfig> = (props) => {
           >
             {/* Hero Copy Column */}
             <div>
-              {/* Breadcrumbs */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  fontSize: "12px",
-                  fontFamily: "var(--z-font-support, sans-serif)",
-                  textTransform: "uppercase",
-                  letterSpacing: "1px",
-                  color: "#67675e",
-                  marginBottom: "20px",
-                }}
-              >
-                <a href="/" style={{ color: "#67675e", textDecoration: "none" }}>
-                  Home
-                </a>
-                <span>/</span>
-                <span style={{ color: "#67675e" }}>{props.category}</span>
-                <span>/</span>
-                <span style={{ color: tone.color, fontWeight: 700 }}>{props.title}</span>
-              </div>
-
               {/* Stacked Badge */}
               <StackedBadge
                 color={props.badgeColor || tone.color}
@@ -340,21 +320,9 @@ export const TopicPageLayout: React.FC<TopicPageConfig> = (props) => {
                 <PillButton href={actions.primaryHref} showArrow>
                   {actions.primaryLabel}
                 </PillButton>
-                <a
-                  href={actions.secondaryHref}
-                  style={{
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    color: "#12141b",
-                    textDecoration: "underline",
-                    textUnderlineOffset: "4px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                  }}
-                >
-                  <span>{actions.secondaryLabel}</span>
-                </a>
+                <PillButton href={actions.secondaryHref} variant="secondary">
+                  {actions.secondaryLabel}
+                </PillButton>
               </div>
 
             </div>
