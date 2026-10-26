@@ -2073,10 +2073,11 @@ blockquote span {
 /* FAQ */
 .faq {
   display: grid;
-  min-height: 864px;
+  min-height: 0;
   grid-template-columns: minmax(0, 1fr) minmax(0, 752.213px);
   gap: 0;
-  padding: 96px 76.8px;
+  align-items: start;
+  padding: clamp(64px, 6.7vw, 96px) 5vw;
   background: #fefefe;
 }
 
@@ -2789,6 +2790,11 @@ body,
   width: 100%;
   max-width: 100%;
   overflow-x: clip;
+}
+
+/* Route chunks load silently; avoid showing the legacy "Opening Zuntra" screen. */
+#root > main.min-h-screen.flex.items-center.justify-center.bg-surface {
+  display: none;
 }
 
 img,

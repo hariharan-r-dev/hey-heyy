@@ -357,29 +357,6 @@ export const TopicPageLayout: React.FC<TopicPageConfig> = (props) => {
                 </a>
               </div>
 
-              {/* Verified Trust Strip */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "18px",
-                  marginTop: "28px",
-                  fontSize: "12px",
-                  color: "#67675e",
-                  fontWeight: 500,
-                  flexWrap: "wrap",
-                }}
-              >
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                  <Check size={14} color="#1ba673" strokeWidth={3} /> No app required for recipients
-                </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                  <Check size={14} color="#1ba673" strokeWidth={3} /> 1-Tap Apple & Google Contacts save
-                </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                  <Check size={14} color="#1ba673" strokeWidth={3} /> Verified Zuntra platform
-                </span>
-              </div>
             </div>
 
             {/* Hero Visual Column */}
